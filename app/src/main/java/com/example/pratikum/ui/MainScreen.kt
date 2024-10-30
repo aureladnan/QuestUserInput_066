@@ -41,7 +41,6 @@ fun MainScreen(
     var emailUser by remember { mutableStateOf("") }
     var alamatUser by remember { mutableStateOf("") }
     var noHPUser by remember { mutableStateOf("") }
-    var selectedGenderUser by remember { mutableStateOf("") }
     var jenisKelaminUser = listOf("Laki-laki", "Perempuan")
 
     Column(Modifier.fillMaxSize().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -78,7 +77,7 @@ fun MainScreen(
         Card(modifier.size(height = 50.dp, width = 150.dp), ){
             CardSection(judulParam = "Nama", isiParam = namaUser)
             CardSection(judulParam = "Email", isiParam = emailUser)
-            CardSection(judulParam = "Jenis Kelamin", isiParam = jenisKelaminUser)
+            CardSection(judulParam = "Jenis Kelamin", isiParam = jenisKelaminUser.toString())
             CardSection(judulParam = "Alamat", isiParam = alamatUser)
             CardSection(judulParam = "Nomor HP", isiParam = noHPUser)
 
