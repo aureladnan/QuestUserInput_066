@@ -10,7 +10,6 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.OutlinedTextField
-
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,6 +20,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 
 @Preview(showBackground = true)
 @Composable
@@ -42,18 +44,18 @@ fun MainScreen(
     var selectedGenderUser by remember { mutableStateOf("") }
     var jenisKelaminUser = listOf("Laki-laki", "Perempuan")
 
-    Column(Modifier.fillMaxSize().padding(16.dp), horizontalAlignment = Aligment.CenterHorizontally) {
+    Column(Modifier.fillMaxSize().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         OutlinedTextField(
             value = nama,
             onValueChange = { nama = it },
             placeholder = { Text("Masukkan Nama") },
-            label = { Text("Nama") },
+            label = { Text(text = "Nama") },
             modifier = Modifier.fillMaxWidth().padding(5.dp)
         )
 
         Row() {
             jenisKelamin.forEach { item ->
-                Row(verticalAlignment = Aligment.CenterVertivally) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
                     RadioButton(selected = selectedGender == item,
                         onClick = { selectedGender = item }
                     )
