@@ -64,15 +64,20 @@ fun MainScreen(
             }
         }
 
-        Button(onClick = {}){
+        Button(onClick = {
             namaUser = nama
+            emailUser = email
             jenisKelaminUser = jenisKelamin
             alamatUser = alamat
             noHPUser = noHP
+        }){
+           Text("Submit")
         }
+
 
         Card(modifier.size(height = 50.dp, width = 150.dp), ){
             CardSection(judulParam = "Nama", isiParam = namaUser)
+            CardSection(judulParam = "Email", isiParam = emailUser)
             CardSection(judulParam = "Jenis Kelamin", isiParam = jenisKelaminUser)
             CardSection(judulParam = "Alamat", isiParam = alamatUser)
             CardSection(judulParam = "Nomor HP", isiParam = noHPUser)
@@ -109,10 +114,11 @@ fun MainScreen(
 }
 
 @Composable
-fun CardSection(JudulParam: String, isiParam: String ) {
+fun CardSection(judulParam: String, isiParam: String ) {
     Column() {
-        Row {
-
+        Row (){
+            Text(text = "$judulParam: ")
+            Text(text = isiParam)
         }
     }
 }
